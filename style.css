@@ -1,0 +1,76 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: "Quicksand", sans-serif;
+}
+
+.title {
+  text-align: center;
+  margin: 10px 0;
+}
+
+#board {
+  height: 90vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-columns: (100px)[3];
+      grid-template-columns: repeat(3, 100px);
+  -ms-grid-rows: (100px)[3];
+      grid-template-rows: repeat(3, 100px);
+}
+
+#board .square {
+  width: 100px;
+  height: 100px;
+  border: 1px black solid;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#board .square i {
+  font-size: 4rem;
+}
+
+#board .square i.hide {
+  opacity: 0;
+  display: none;
+}
+
+#board .square i.show {
+  opacity: 0;
+}
+
+#board .square i.clicked {
+  opacity: 1;
+}
+
+#board .square:hover i.show {
+  opacity: 0.5;
+}
+
+#board .square.clicked {
+  pointer-events: none;
+}
+/*# sourceMappingURL=style.css.map */

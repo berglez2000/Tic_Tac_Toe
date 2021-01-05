@@ -1,0 +1,57 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: "Quicksand", sans-serif;
+}
+
+.title {
+  text-align: center;
+  margin: 10px 0;
+}
+
+#board {
+  height: 90vh;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  .square {
+    width: 100px;
+    height: 100px;
+    border: 1px black solid;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      font-size: 4rem;
+    }
+    i.hide {
+      opacity: 0;
+      display: none;
+    }
+    i.show {
+      opacity: 0;
+    }
+    i.clicked {
+      opacity: 1;
+    }
+    &:hover {
+      i.show {
+        opacity: 0.5;
+      }
+    }
+  }
+  .square.clicked {
+    pointer-events: none;
+  }
+}
