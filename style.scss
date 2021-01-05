@@ -3,7 +3,7 @@
 ::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: 0;
 }
 
 body {
@@ -13,45 +13,29 @@ body {
 
 .title {
   text-align: center;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 #board {
-  height: 90vh;
   width: 100%;
+  height: 90vh;
   display: grid;
-  justify-content: center;
-  align-content: center;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
-  .square {
-    width: 100px;
-    height: 100px;
+  justify-content: center;
+  align-content: center;
+  .box {
+    width: 99px;
+    height: 99px;
     border: 1px black solid;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    i {
-      font-size: 4rem;
-    }
-    i.hide {
-      opacity: 0;
-      display: none;
-    }
-    i.show {
+    cursor: pointer;
+    img {
+      width: 70px;
+      height: 70px;
       opacity: 0;
     }
-    i.clicked {
-      opacity: 1;
-    }
-    &:hover {
-      i.show {
-        opacity: 0.5;
-      }
-    }
-  }
-  .square.clicked {
-    pointer-events: none;
   }
 }
