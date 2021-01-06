@@ -1,42 +1,134 @@
+/* Variables */
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 ::after,
 ::before {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: 0;
-          box-sizing: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
-  background-color: whitesmoke;
+  overflow: hidden;
   font-family: "Quicksand", sans-serif;
-}
-
-.title {
-  text-align: center;
-  margin: 20px 0;
-}
-
-#board {
-  width: 100%;
-  height: 90vh;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (100px)[3];
-      grid-template-columns: repeat(3, 100px);
-  -ms-grid-rows: (100px)[3];
-      grid-template-rows: repeat(3, 100px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: #50c9c3;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#96deda), to(#50c9c3));
+  background: linear-gradient(to right, #96deda, #50c9c3);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#board .box {
-  width: 99px;
-  height: 99px;
-  border: 1px black solid;
+body section {
+  height: 100vh;
+}
+
+.btn {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px grey solid;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  background: black;
+  color: whitesmoke;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  border: 1px whitesmoke solid;
+}
+
+.landing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.landing .intro h1 {
+  margin: 20px 0;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.landing .intro h4 {
+  font-size: 18px;
+}
+
+.landing .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.landing .btns div {
+  margin: 0 20px;
+}
+
+.landing .btns div .single-link {
+  pointer-events: none;
+}
+
+#names {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#names .inputs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,12 +138,20 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-#board .box img {
-  width: 70px;
-  height: 70px;
-  opacity: 0;
+#names .inputs div {
+  margin: 0 20px;
+}
+
+#names .inputs div input {
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif;
+  max-width: 200px;
+  padding: 5px 10px;
 }
 /*# sourceMappingURL=style.css.map */

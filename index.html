@@ -4,43 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic Tac Toe</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-  <h1 class="title">Tic Tac Toe Game</h1>
-  <div class="board" id="board">
-    <div class="box" id="1">
-      <img src="" alt="">
+  <section class="landing">
+    <div class="intro">
+      <h1 class="title">
+        Dobrodošli v igri Tic Tac Toe
+      </h1>
+      <h4>Izberi vrsto igre</h4>
     </div>
-    <div class="box" id="2">
-      <img src="" alt="">
+    <div class="btns">
+      <div>
+        <a href="#names" class="single-link"><button class="single btn">Single Player</button></a>
+        <p>Še v izdelavi :(</p>
+      </div>
+      <div>
+        <a href="#names" class="double-link"><button class="double btn">Double Player</button></a>
+      </div>
     </div>
-    <div class="box" id="3">
-      <img src="" alt="">
+  </section>
+  <section class="choose-names" id="names">
+    <h1>Izberi imena igralcev</h1>
+    <div class="inputs">
+      <div class="input-1">
+        <input type="text" name="player-1" id="player-1" placeholder="Ime igralca 1">
+      </div>
+      <div class="input-2">
+        <input type="text" name="player-2" id="player-2" placeholder="Ime igralca 2">
+      </div>
     </div>
-    <div class="box" id="4">
-      <img src="" alt="">
+    <button class="start-game btn">Play!</button>
+  </section>
+  <section class="game" id="game">
+    <h3 class="player-one-name">Player One: <span class="player-one-score">0</span></h3>
+    <h3 class="player-two-name">Player Two: <span class="player-two-score">0</span></h3>
+    <div class="board">
+      <div class="box" id="1">
+        <img src="">
+      </div>
+      <div class="box" id="2">
+        <img src="">
+      </div>
+      <div class="box" id=3>
+        <img src="">
+      </div>
+      <div class="box" id="4">
+        <img src="">
+      </div>
+      <div class="box" id="5">
+        <img src="">
+      </div>
+      <div class="box" id="6">
+        <img src="">
+      </div>
+      <div class="box" id="7">
+        <img src="">
+      </div>
+      <div class="box" id="8">
+        <img src="">
+      </div>
+      <div class="box" id="9">
+        <img src="">
+      </div>
     </div>
-    <div class="box" id="5">
-      <img src="" alt="">
-    </div>
-    <div class="box" id="6">
-      <img src="" alt="">
-    </div>
-    <div class="box" id="7">
-      <img src="" alt="">
-    </div>
-    <div class="box" id="8">
-      <img src="" alt="">
-    </div>
-    <div class="box" id="9">
-      <img src="" alt="">
-    </div>
-  </div>
-  <div class="win-popup"></div>
+  </section>
+  <section class="game-over"></section>
+  <section class="thank-page"></section>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 </html>
