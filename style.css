@@ -40,6 +40,7 @@ body {
 
 body section {
   height: 100vh;
+  width: 100%;
 }
 
 .btn {
@@ -146,6 +147,19 @@ body section {
 
 #names .inputs div {
   margin: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #names .inputs div input {
@@ -153,5 +167,97 @@ body section {
   font-family: "Quicksand", sans-serif;
   max-width: 200px;
   padding: 5px 10px;
+  margin: 10px 0;
+}
+
+#names .inputs div img {
+  width: 50px;
+  margin: 10px 0;
+}
+
+#game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#game .results {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 20px 0;
+}
+
+#game .results span {
+  font-size: 2rem;
+}
+
+#game .board {
+  margin: 20px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (100px)[3];
+      grid-template-columns: repeat(3, 100px);
+  -ms-grid-rows: (100px)[3];
+      grid-template-rows: repeat(3, 100px);
+}
+
+#game .board .box {
+  width: 100px;
+  height: 100px;
+  border: 1px black solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  cursor: pointer;
+}
+
+#game .board .box img {
+  width: 65px;
+  height: 65px;
+  opacity: 0;
+}
+
+#game .board .box:hover img {
+  opacity: 0.5;
+}
+
+#game .board .box.clicked {
+  pointer-events: none;
+}
+
+#game .board .box.clicked img.clicked {
+  opacity: 1;
+  pointer-events: none;
 }
 /*# sourceMappingURL=style.css.map */
