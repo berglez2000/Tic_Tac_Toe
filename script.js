@@ -1,3 +1,4 @@
+// Variables
 const playBtn = document.querySelector(".start-game");
 const playerOne = document.querySelector("#player-1");
 const playerTwo = document.querySelector("#player-2");
@@ -16,8 +17,6 @@ let xMoves = [];
 let oMoves = [];
 const gameOverSection = document.querySelector("#game-over");
 
-playerOne.value = "aljaz";
-playerTwo.value = "bostjan";
 
 const main = () => {
   const checkInputs = () => {
@@ -122,6 +121,7 @@ const main = () => {
         const a = document.createElement("a");
         a.href = "#landing";
         a.click();
+        thankPage.classList.remove("show");
       });
     });
   }
