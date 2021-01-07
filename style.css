@@ -12,6 +12,13 @@ html {
           box-sizing: border-box;
 }
 
+body,
+.thank-page {
+  background: #50c9c3;
+  background: -webkit-gradient(linear, left top, right top, from(#96deda), to(#50c9c3));
+  background: linear-gradient(to right, #96deda, #50c9c3);
+}
+
 body {
   overflow: hidden;
   font-family: "Quicksand", sans-serif;
@@ -30,12 +37,6 @@ body {
           align-items: center;
   width: 100%;
   min-height: 100vh;
-  background: #50c9c3;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#96deda), to(#50c9c3));
-  background: linear-gradient(to right, #96deda, #50c9c3);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 body section {
@@ -259,5 +260,84 @@ body section {
 #game .board .box.clicked img.clicked {
   opacity: 1;
   pointer-events: none;
+}
+
+#game-over {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+#game-over h3 {
+  color: whitesmoke;
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+#game-over .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 20px 0;
+}
+
+#game-over .btns button {
+  margin: 0 20px;
+}
+
+#game-over.show {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.thank-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.thank-page.show {
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  z-index: 3;
 }
 /*# sourceMappingURL=style.css.map */

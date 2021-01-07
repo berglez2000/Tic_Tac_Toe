@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-  <section class="landing">
+  <section id="landing" class="landing">
     <div class="intro">
       <h1 class="title">
         Dobrodošli v igri Tic Tac Toe
@@ -76,8 +76,18 @@
       </div>
     </div>
   </section>
-  <section class="game-over"></section>
-  <section class="thank-page"></section>
+  <section id="game-over">
+    <h3 class="winner-text"></h3>
+    <h3>Bi želeli odigrati ponovno igro?</h3>
+    <div class="btns">
+      <button class="play-again btn">Da</button>
+      <button class="return btn">Ne</button>
+    </div>
+  </section>
+  <section class="thank-page">
+    <h1>Hvala za obisk :)</h1>
+    <a href="#landing"><button class="start btn">Začetek</button></a>
+  </section>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
 <script src="script.js"></script>

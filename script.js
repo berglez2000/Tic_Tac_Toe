@@ -14,6 +14,7 @@ let gameOver = false;
 const possibleWins = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"], ["1", "4", "7"], ["2", "5", "8"], ["3", "6", "9"], ["1", "5", "9"], ["3", "5", "7"]]
 let xMoves = [];
 let oMoves = [];
+const gameOverSection = document.querySelector("#game-over");
 
 playerOne.value = "aljaz";
 playerTwo.value = "bostjan";
@@ -67,8 +68,62 @@ const main = () => {
     }
   }
 
-  const FinishGame = () => {
+  const finishGame = (winner) => {
     console.log("Igra je končana");
+    // Dodaj vsem class clicked da se ne da več klikati
+    boxes.forEach(box => {
+      if (!box.classList.contains("clicked")){
+        box.classList.add("clicked");
+      }
+    });
+
+    // Prikaže se popup
+    gameOverSection.classList.add("show");
+    // Spremeni text v besedilu
+    const winText = document.querySelector(".winner-text");
+    if (gameOver){
+      winText.textContent = `Zmagovalec je ${winner}`;
+    } else {
+      winText.textContent = `Izenačeno`;
+    }
+    // Dodaj Event listenerje za ponovno igro ali ne
+    const playAgain = document.querySelector(".play-again");
+    const returnBtn = document.querySelector(".return");
+
+    playAgain.addEventListener("click", () => {
+      gameOverSection.classList.remove("show");
+      // Nastavi vse kot je na začetku
+      // Vse boolean vrednosti nastavi na default
+      rounds = 0;
+      gameOver = false;
+      xMoves = [];
+      oMoves = [];
+      boxes.forEach(box => {
+        if (box.classList.contains("clicked")){
+          box.classList.remove("clicked");
+        }
+      });
+      images.forEach(img => {
+        img.classList.remove("clicked");
+      });
+
+      // Spremeni rezultete
+      playerOneName.textContent = `${playerOne.value}: ${playerOneScore}`;
+      playerTwoName.textContent = `${playerTwo.value}: ${playerTwoScore}`;
+
+      imgSrc();
+    });
+
+    returnBtn.addEventListener("click", () => {
+      const thankPage = document.querySelector(".thank-page");
+      thankPage.classList.add("show");
+      const startBtn = document.querySelector(".start")
+      startBtn.addEventListener("click", () => {
+        const a = document.createElement("a");
+        a.href = "#landing";
+        a.click();
+      });
+    });
   }
 
   const checkResult = () => {
@@ -87,7 +142,8 @@ const main = () => {
             if (same >= 3){
               console.log(`${playerOne.value} wins`);
               gameOver = true;
-              break;
+              playerOneScore++;
+              return finishGame(playerOne.value)
             }
           }
         }
@@ -103,17 +159,15 @@ const main = () => {
             if (same >= 3){
               console.log(`${playerTwo.value} wins`);
               gameOver = true;
-              break;
+              playerTwoScore++;
+              return finishGame(playerTwo.value);
             }
           }
         }
       }
     }
-    if (gameOver && rounds <= 9){
-      // napiši funkcijo za game over
-      FinishGame();
-    } else if (rounds === 9 && !gameOver){
-      FinishGame()
+    if (rounds === 9 && !gameOver){
+      return finishGame("0");
     }
   }
 

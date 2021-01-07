@@ -25,6 +25,13 @@ html {
   box-sizing: border-box;
 }
 
+body,
+.thank-page {
+  background: #50c9c3;
+  background: -webkit-linear-gradient(to right, #96deda, #50c9c3);
+  background: linear-gradient(to right, #96deda, #50c9c3);
+}
+
 body {
   overflow: hidden;
   font-family: "Quicksand", sans-serif;
@@ -34,17 +41,6 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background: #50c9c3; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #96deda,
-    #50c9c3
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #96deda,
-    #50c9c3
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   section {
     height: 100vh;
@@ -154,4 +150,37 @@ body {
       }
     }
   }
+}
+
+#game-over {
+  transition: all 0.5s ease;
+  @include flexCenter(column);
+  h3 {
+    color: whitesmoke;
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+  .btns {
+    @include flexCenter(row);
+    margin: 20px 0;
+    button {
+      margin: 0 20px;
+    }
+  }
+  background-color: rgba($color: #000000, $alpha: 0.75);
+  transform: translateY(0);
+}
+#game-over.show {
+  transform: translateY(-100%);
+  transition: all 0.5s ease;
+}
+
+.thank-page {
+  @include flexCenter(column);
+}
+
+.thank-page.show {
+  transform: translateY(-200%);
+  transition: all 0.5s ease;
+  z-index: 3;
 }
