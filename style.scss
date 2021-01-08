@@ -153,6 +153,7 @@ body {
 }
 
 #game-over {
+  text-align: center;
   transition: all 0.5s ease;
   @include flexCenter(column);
   h3 {
@@ -183,4 +184,89 @@ body {
   transform: translateY(-200%);
   transition: all 0.5s ease;
   z-index: 3;
+}
+
+@media screen and (max-width: 500px) {
+  #names {
+    .inputs {
+      input {
+        width: 150px;
+      }
+      div {
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .landing {
+    .intro {
+      .title {
+        font-size: 1.4rem;
+      }
+      h4 {
+        font-size: 1rem;
+      }
+    }
+  }
+  #game-over {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .landing {
+    .intro {
+      .title {
+        font-size: 1rem;
+      }
+      h4 {
+        font-size: 15px;
+      }
+    }
+    .btns {
+      display: flex;
+      flex-direction: column;
+      div {
+        margin: 10px 0;
+        padding: 0;
+      }
+    }
+  }
+
+  #names {
+    .inputs {
+      flex-direction: column;
+      width: 100%;
+      div {
+        margin: 10px 0;
+        width: 100%;
+        input {
+          width: 80%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  #game {
+    .board {
+      grid-template-rows: repeat(3, 75px);
+      grid-template-columns: repeat(3, 75px);
+      .box {
+        width: 75px;
+        height: 75px;
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
 }

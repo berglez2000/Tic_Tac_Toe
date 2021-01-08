@@ -263,6 +263,7 @@ body section {
 }
 
 #game-over {
+  text-align: center;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   display: -webkit-box;
@@ -339,5 +340,78 @@ body section {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   z-index: 3;
+}
+
+@media screen and (max-width: 500px) {
+  #names .inputs input {
+    width: 150px;
+  }
+  #names .inputs div img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .landing .intro .title {
+    font-size: 1.4rem;
+  }
+  .landing .intro h4 {
+    font-size: 1rem;
+  }
+  #game-over h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .landing .intro .title {
+    font-size: 1rem;
+  }
+  .landing .intro h4 {
+    font-size: 15px;
+  }
+  .landing .btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .landing .btns div {
+    margin: 10px 0;
+    padding: 0;
+  }
+  #names .inputs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  #names .inputs div {
+    margin: 10px 0;
+    width: 100%;
+  }
+  #names .inputs div input {
+    width: 80%;
+    text-align: center;
+  }
+  #game .board {
+    -ms-grid-rows: (75px)[3];
+        grid-template-rows: repeat(3, 75px);
+    -ms-grid-columns: (75px)[3];
+        grid-template-columns: repeat(3, 75px);
+  }
+  #game .board .box {
+    width: 75px;
+    height: 75px;
+  }
+  #game .board .box img {
+    width: 50px;
+    height: 50px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
