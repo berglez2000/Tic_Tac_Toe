@@ -16,9 +16,17 @@ const possibleWins = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"], ["1", "
 let xMoves = [];
 let oMoves = [];
 const gameOverSection = document.querySelector("#game-over");
+const doublePlayer = document.querySelector(".double.btn");
+const nameSection = document.querySelector("#names");
+const gameSection = document.querySelector("#game");
 
 
 const main = () => {
+  // Igralec klikne na single ali double player
+  doublePlayer.addEventListener("click", () => {
+    nameSection.classList.toggle("show");
+  });
+
   const checkInputs = () => {
     if (playerOne.value === null || playerOne.value === "" || playerTwo.value === null || playerTwo.value === ""){
       return alert("Prosim vnesite ime igralca");
@@ -28,13 +36,6 @@ const main = () => {
   }
   
   const startGame = () => {
-    // Scroll to game section
-    const a = document.createElement("a");
-    a.href = "#game";
-    a.click();
-    a.style.pointerEvents = "none";
-    a.style.display = "none";
-
     playerOneName.textContent = `${playerOne.value}: ${playerOneScore}`;
     playerTwoName.textContent = `${playerTwo.value}: ${playerTwoScore}`;
   }
@@ -118,10 +119,7 @@ const main = () => {
       thankPage.classList.add("show");
       const startBtn = document.querySelector(".start")
       startBtn.addEventListener("click", () => {
-        const a = document.createElement("a");
-        a.href = "#landing";
-        a.click();
-        thankPage.classList.remove("show");
+        location.reload();
       });
     });
   }
@@ -197,6 +195,7 @@ const main = () => {
     checkInputs();
     // Start game
     if (checked){
+      gameSection.classList.toggle("show");
       startGame();
       imgSrc();
       game();

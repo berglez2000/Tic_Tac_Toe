@@ -12,8 +12,7 @@ html {
           box-sizing: border-box;
 }
 
-body,
-.thank-page {
+body section {
   background: #50c9c3;
   background: -webkit-gradient(linear, left top, right top, from(#96deda), to(#50c9c3));
   background: linear-gradient(to right, #96deda, #50c9c3);
@@ -114,7 +113,18 @@ body section {
   pointer-events: none;
 }
 
+#names,
+#games,
+.thank-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
 #names {
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,7 +186,22 @@ body section {
   margin: 10px 0;
 }
 
+#names.show {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#game.show {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
 #game {
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,7 +304,6 @@ body section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.75);
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
@@ -312,8 +336,10 @@ body section {
 }
 
 #game-over.show {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
+  z-index: 3;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -335,11 +361,11 @@ body section {
 }
 
 .thank-page.show {
-  -webkit-transform: translateY(-200%);
-          transform: translateY(-200%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  z-index: 3;
+  z-index: 4;
 }
 
 @media screen and (max-width: 500px) {
