@@ -109,10 +109,6 @@ body section {
   margin: 0 20px;
 }
 
-.landing .btns div .single-link {
-  pointer-events: none;
-}
-
 #names,
 #games,
 .thank-page {

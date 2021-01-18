@@ -17,9 +17,10 @@ let xMoves = [];
 let oMoves = [];
 const gameOverSection = document.querySelector("#game-over");
 const doublePlayer = document.querySelector(".double.btn");
+const singlePlayer = document.querySelector(".single.btn");
 const nameSection = document.querySelector("#names");
 const gameSection = document.querySelector("#game");
-
+let singleMode = false;
 
 const main = () => {
   // Igralec klikne na single ali double player
@@ -27,6 +28,14 @@ const main = () => {
     nameSection.classList.toggle("show");
   });
 
+  singlePlayer.addEventListener("click", () => {
+    nameSection.classList.toggle("show");
+    playerTwo.value = "computer";
+    playerTwo.disabled = true;
+    singleMode = true;
+  });
+  
+  // Pregleda inpute
   const checkInputs = () => {
     if (playerOne.value === null || playerOne.value === "" || playerTwo.value === null || playerTwo.value === ""){
       return alert("Prosim vnesite ime igralca");
@@ -188,17 +197,42 @@ const main = () => {
       });
     });
   }
+
+  const singleGame = () => {
+    boxes.forEach(box => {
+      box.addEventListener("click", () => {
+        if (xTurn){
+          rounds++;
+          addMoves(box.id);
+          const img = box.children[0];
+  
+          box.classList.add("clicked");
+          img.classList.add("clicked");
+  
+          switchTurns();
+          imgSrc();
+        }
+      });
+    });
+  }
   
   playBtn.addEventListener("click", (e) => {
     e.preventDefault();
   
     checkInputs();
     // Start game
-    if (checked){
+    if (checked && !singleMode){
+      console.log("double game!");
       gameSection.classList.toggle("show");
       startGame();
       imgSrc();
       game();
+    } else if (checked && singleMode){
+      gameSection.classList.toggle("show");
+      console.log("single game!");
+      startGame();
+      imgSrc();
+      singleGame();
     }
   });
 }
